@@ -11,7 +11,7 @@
           </div>
           <div class="p-5 space-y-3">
             <h3 class="text-xl font-medium"><%= product.title %></h3>
-            <p class="text-gold-dark font-medium">From €<%= product.price %></p>
+            <p class="text-gold-dark font-medium">From €<%= product.price.to_i %></p>
             <p class="text-foreground text-sm"><%= product.description %></p>
             <%= link_to "Enquire Now", pages_contact_path, class: "btn-card" %>
           </div>
