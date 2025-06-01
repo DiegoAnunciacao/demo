@@ -1,0 +1,17 @@
+ <section class="py-16 md:py-24">
+  <div class="container mx-auto">
+    <div class="text-center">
+      <h2 class="text-4xl mb-12 font-extralight">Featured Work</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <% @covers.each do |cover| %>
+        <div class="aspect-[3/4] overflow-hidden rounded-md fade-in">
+          <%= image_tag asset_path(cover[:image]), class: "rounded-lg w-full h-full object-cover hover:scale-105 transition-transform duration-700" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="mt-12 text-center">
+     <%= link_to "View Full Portfolio", pages_portfolio_path, class: "btn-gold" %>
+    </div>
+  </div>
+ </section>

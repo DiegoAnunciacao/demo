@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "./base/_variables.css";
+@import "./base/_typography.css";
+@import "./base/_buttons.css";
+@import "./base/_grids.css";
+@import "./base/_cards.css";
+@import "./base/_containers.css";

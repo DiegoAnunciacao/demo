@@ -1,0 +1,78 @@
+<div class="relative h-screen">
+  <div class="absolute inset-0 bg-cover bg-bottom" style="background-image: url(<%= asset_path('COVER.jpg')%>);">
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+
+  <div class=" relative h-full flex items-center justify-center">
+    <div class="text-center text-white max-w-3xl px-6">
+
+      <h1 class="title font-semibold">Capturing Love Across <br>Europe</h1>
+
+      <p class="text-lg md:text-xl mb-8 md:mb-10">Wedding photography that tells your unique story with artistic vision and authentic emotion</p>
+
+      <%= link_to "View Portfolio", pages_portfolio_path, class: "inline-flex bg-sand hover:bg-sand-light font-medium cursor-pointer text-black rounded-lg px-6 py-2 mx-2" %>
+
+    </div>
+  </div>
+</div>
+
+<section class="py-16 md:py-24 bg-sand">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <% @icons.each do |icon| %>
+        <div class="text-center">
+          <div class="flex justify-center mb-4">
+            <%= render "/pages/icons/#{icon[:icon]}" %>
+          </div>
+          <div>
+            <p class="text-3xl md:text-4xl font-medium mb-1 font-playfair"><%= icon[:count] %></p>
+            <p class="text-sm md:text-base text-foreground"><%= icon[:text] %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render 'partials/cards' %>
+
+<section class="py-16 md:py-24 bg-sand-light">
+  <div class="container mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl text-center">Love Notes</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-9">
+      <div class=" bg-default rounded-2xl p-6">
+        <h1 class="text-gold-dark text-6xl">“</h1>
+        <p class="mb-5">Our wedding photos are absolute treasures that we'll cherish forever. Every moment was captured with such artistry and emotion.</p>
+        <p>Sarah & James</p>
+       <span class="text-foreground">Tuscany, Italy</span>
+      </div>
+      <div class=" bg-default rounded-2xl p-6">
+        <h1 class="text-gold-dark text-6xl">“</h1>
+        <p class="mb-5">Working with such a talented photographer was the best decision we made for our wedding. The photos exceeded all our expectations.</p>
+        <p>Sarah & James</p>
+       <span class="text-foreground">Santorini, Greece</span>
+      </div>
+      <div class=" bg-default rounded-2xl p-6">
+        <h1 class="text-gold-dark text-6xl">“</h1>
+        <p class="mb-5">Not only are the photos stunning, but the experience of working with such a professional made our day even more special.</p>
+        <p>Sarah & James</p>
+       <span class="text-foreground">Dublin, Ireland</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-16 md:my-26">
+  <div class="container mx-auto">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl mb-6">Ready to Book Your Wedding Photography?</h2>
+      <p class="max-w-2xl mx-auto mb-8 text-foreground">Let's create beautiful memories together. Contact me to check availability for your wedding date.</p>
+    </div>
+    <div class="text-center">
+      <%= link_to "Get In Touch", pages_contact_path, class: "btn-gold" %>
+    </div>
+  </div>
+</section>

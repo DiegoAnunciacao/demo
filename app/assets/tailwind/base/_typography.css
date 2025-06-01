@@ -1,0 +1,15 @@
+body {
+  @apply font-lato;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-playfair;
+}
+
+.title{
+  @apply text-center text-3xl md:text-5xl;
+}
+
+.subtitle {
+  @apply text-2xl md:text-3xl;
+}

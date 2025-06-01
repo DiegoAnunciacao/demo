@@ -1,0 +1,19 @@
+<% flash.each do |key, message| %>
+  <% color = case key.to_sym
+    when :notice then "bg-green-100 text-green-800 border-green-300"
+    when :alert  then "bg-red-100 text-red-800 border-red-300"
+    else "bg-blue-100 text-blue-800 border-blue-300"
+  end %>
+
+  <div class="relative flex items-center gap-2 rounded border <%= color %> p-4 shadow-sm" role="alert">
+    <svg class="h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="..." clip-rule="evenodd" />
+    </svg>
+    <span class="text-sm font-medium"><%= message %></span>
+    <button type="button" class="ml-auto text-inherit hover:text-opacity-70" onclick="this.parentElement.remove()">
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="..." clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+<% end %>

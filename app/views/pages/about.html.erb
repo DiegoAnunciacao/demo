@@ -1,0 +1,51 @@
+<div class="pt-24 md:pt-28 lg:pt-32 bg-default">
+  <div class="container mx-auto py-20 px-8">
+    <h1 class="title mb-12">About us</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <%= image_tag "n&c.jpg", class: "w-full h-full object-cover rounded-lg shadow-md" %>
+      </div>
+      <div>
+        <h2 class="subtitle mb-6">Hello, we're Carter & Natalie</h2>
+        <p>
+          For over 16 years, I've been capturing life's most precious moments through photography. My journey began with a simple passion for freezing moments in time and has evolved into a career documenting love stories across Europe's most beautiful destinations.<br><br>
+
+          After establishing my career in the Brazil, I met my wife Natalie and together we became the dream team, we moved to Ireland in 2022, drawn by its rich landscapes and intimate wedding traditions. This move opened up opportunities to photograph weddings throughout Europe.<br><br>
+
+          Our approach to wedding photography blends documentary storytelling with fine art portraiture. We believe in capturing authentic emotions while creating timeless, artistic images that will be treasured for generations.<br><br>
+
+          When we're not behind the camera, you'll find us exploring new destinations, enjoying good coffee, and spending time with our family. We look forward to hearing your story and discussing how we can help preserve your wedding memories.
+        </p>
+      </div>
+    </div>
+    <div class="mt-20">
+      <h2 class="text-center subtitle mb-8">My Philosophy</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <% @notes.each do |note| %>
+        <div class="bg-sand p-6 rounded-lg text-center">
+          <h3 class="text-center text-xl mb-4"><%= note[:title] %></h3>
+          <p class="text-foreground text-md"><%= note[:description] %></p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+     <div class="mt-20">
+      <h2 class="text-center subtitle mb-8">Experience & Expertise</h2>
+      <div class="shadow-sm rounded-lg p-8 bg-white">
+        <div class="space-y-6">
+          <% @experiences.each do |exp| %>
+          <div class="flex flex-col md:flex-row md:items-center gap-4">
+            <div class="bg-gold-light/10 p-3 rounded-full">
+              <%= render "/pages/icons/#{exp[:icon]}" %>
+            </div>
+            <div>
+              <h3 class="font-medium text-xl"><%= exp[:title] %></h3>
+              <p class="text-foreground"><%= exp[:description] %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

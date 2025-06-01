@@ -1,0 +1,18 @@
+<section class="pt-24 md:pt-28 lg:pt-32 bg-default min-h-screen">
+  <div class="container mx-auto py-20 px-8">
+    <h1 class="title mb-4">Edit Gallery</h1>
+    <div class="flex justify-center items-center">
+      <%= form_with model: [ :admin, @gallery ], local: true, html: { multipart: true } do |f| %>
+        <div class="mb-4 space-y-3">
+          <%= f.label :title, class: "block font-bold text-lg" %>
+          <%= f.text_field :title, class: "border rounded-md px-3 py-2 w-full mb-4" %>
+          <%= f.label :cover_img, "Select Cover Image", class: "block font-bold text-lg" %>
+          <%= f.file_field :cover_img,class: "btn-primary mb-4" %>
+          <%= f.label :gallery_img, "Select Gallery Images", class: "block font-bold text-lg" %>
+          <%= f.file_field :gallery_img, multiple: true, class: "btn-primary" %>
+          <%= f.submit "Update", class: "btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

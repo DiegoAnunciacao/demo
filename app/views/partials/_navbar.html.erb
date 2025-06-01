@@ -1,0 +1,32 @@
+<nav   data-controller="navbar" data-navbar-target="navbar" class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent">
+  <div class="container mx-auto flex items-center justify-between">
+    <div class="font-playfair text-xl md:text-2xl font-bold">
+      <%= link_to "CARTER PHOTOGRAPHY", root_path %>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+      <%= link_to "Home", root_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(root_path)}" %>
+      <%= link_to "About", pages_about_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_about_path)}" %>
+      <%= link_to "Portfolio", pages_portfolio_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_portfolio_path)}" %>
+      <%= link_to "Products", pages_products_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_products_path)}" %>
+      <%= link_to "Contact", pages_contact_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_contact_path)}" %>
+    </div>
+    <button data-action="click->navbar#toggle" class="md:hidden focus:outline-none">
+      <svg data-navbar-target="openIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      <svg data-navbar-target="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+
+    </button>
+  </div>
+  <div data-navbar-target="menu" data-controller="navigation" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+    <div class="flex flex-col py-4 space-y-4 container">
+      <%= link_to "Home", root_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(root_path)}" %>
+      <%= link_to "About", pages_about_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_about_path)}" %>
+      <%= link_to "Portfolio", pages_portfolio_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_portfolio_path)}" %>
+      <%= link_to "Products", pages_products_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_products_path)}" %>
+      <%= link_to "Contact", pages_contact_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_contact_path)}" %>
+    </div>
+  </div>
+</nav>
