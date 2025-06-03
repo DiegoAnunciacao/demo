@@ -10,7 +10,7 @@
         <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
           <%= form_with model: @contact, url: pages_contact_path, method: :post, local: true, class: "space-y-6" do |f| %>
             <% if @contact.errors.any? %>
-              div class="text-red-600">
+              <div class="text-red-600">
                 <ul>
                   <% @contact.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
@@ -21,28 +21,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
                 <%= f.label :name, "Name *", class: "block text-sm font-medium" %>
-                <%= f.text_field :name, required: true, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
+                <%= f.text_field :name, aria: { required: true }, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
               <div class="space-y-2">
                 <%= f.label :email, "Email *", class: "block text-sm font-medium" %>
-                <%= f.text_field :email, required: true, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
+                <%= f.text_field :email, aria: { required: true }, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
                 <%= f.label :date, "Wedding Date *", class: "block text-sm font-medium" %>
-                <%= f.date_field :date, required: true, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
+                <%= f.date_field :date, aria: { required: true }, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
               <div class="space-y-2">
                 <%= f.label :location, "Location *", class: "block text-sm font-medium" %>
-                <%= f.text_field :location, required: true, placeholder: "e.g., Dublin, Ireland", class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
+                <%= f.text_field :location, aria: { required: true }, placeholder: "e.g., Dublin, Ireland", class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
             </div>
             <div class="space-y-2">
               <%= f.label :message, "Message *", class: "block text-sm font-medium" %>
-              <%= f.text_area :message, required: true, placeholder: "Tell me About your wedding plans...", class: "w-full p-3 h-40 border border-sand-dark rounded-md focus:outline-gold-dark" %>
+              <%= f.text_area :message, aria: { required: true }, placeholder: "Tell me About your wedding plans...", class: "w-full p-3 h-40 border border-sand-dark rounded-md focus:outline-gold-dark" %>
             </div>
-            <button class="btn-gold mt-6">Send Message</button>
+            <button type="submit" class="btn-gold mt-6">Send Message</button>
           <% end %>
         </div>
       </div>
@@ -55,7 +55,7 @@
               <div class="mr-3 mt-1"><%= render "pages/icons/email" %></div>
               <div>
                 <p class="font-medium">Email</p>
-                <%= link_to "carterfotografia@gmail.com", root_path, class: "text-[color:var(--foreground)] hover:text-[color:var(--color-gold-dark)] transition-colors duration-300" %>
+                <%= mail_to "carterfotografia@gmail.com", "carterfotografia@gmail.com", root_path, class: "text-[color:var(--foreground)] hover:text-[color:var(--color-gold-dark)] transition-colors duration-300" %>
               </div>
             </div>
           </div>
