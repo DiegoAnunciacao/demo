@@ -21,7 +21,7 @@
             </span>
           </div>
 
-          <% gallery.gallery_img.each do |image, index| %>
+          <% gallery.gallery_img.each do |image| %>
             <%= image_tag url_for(image), data: { fancybox: "gallery-#{gallery.id}" }, style: "display:none;" %>
           <% end %>
         </div>

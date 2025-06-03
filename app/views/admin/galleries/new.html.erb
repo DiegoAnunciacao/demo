@@ -4,15 +4,26 @@
     <div class="flex justify-center items-center">
       <%= form_with model: [ :admin, @gallery ], local: true, html: { multipart: true } do |f| %>
         <div class="mb-4">
-          <%= f.label :title, class: "block font-bold text-lg mb-1" %>
-          <%= f.text_field :title, class: "border rounded-md px-3 py-2 w-full" %>
-           <%= f.label :cover_img, "Select Gallery Images", class: "block font-bold text-lg mb-1" %>
-          <%= f.file_field :cover_img,class: "py-2 px-4 rounded bg-green-500 text-white cursor-pointer hover:bg-green-700 mt-4 text-center" %>
-          <%= f.label :gallery_img, "Select Gallery Images", class: "block font-bold text-lg mb-1" %>
-          <%= f.file_field :gallery_img, multiple: true, class: "py-2 px-4 rounded bg-green-500 text-white cursor-pointer hover:bg-green-700 mt-4 text-center" %>
-          <%= f.submit "Create", class: "py-2 px-4 rounded bg-indigo-500 text-white cursor-pointer hover:bg-indigo-700 mt-4" %>
+          <div class="mb-6">
+            <%= f.label :title, class: "block font-bold text-lg mb-1" %>
+            <%= f.text_field :title, required: true, class: "border rounded-md px-3 py-2 w-full" %>
+          </div>
+          <div class="mb-6">
+            <div class="flex items-center gap-2">
+              <%= f.label :cover_img, "Select Cover Image:", class: "block font-bold text-lg mb-1" %>
+              <%= f.file_field :cover_img, class: "px-4 btn-primary" %>
+            </div>
+          </div>
+          <div class="mb-6">
+            <div class="flex items-center gap-2">
+              <%= f.label :gallery_img, "Select Gallery Images:", class: "block font-bold text-lg mb-1" %>
+              <%= f.file_field :gallery_img, multiple: true, class: "px-4 btn-primary" %>
+            </div>
+          </div>
+          <%= f.submit "Create", class: "py-2 px-4 w-full btn-primary mt-4" %>
         </div>
       <% end %>
     </div>
+    <%= link_to "Dashboard", admin_root_path %>
   </div>
 </section>

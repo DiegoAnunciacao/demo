@@ -8,30 +8,39 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <div class="md:col-span-2">
         <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
-          <%= form_with url: contacts_path, method: :post, class: "space-y-6" do %>
+          <%= form_with model: @contact, url: pages_contact_path, method: :post, local: true, class: "space-y-6" do |f| %>
+            <% if @contact.errors.any? %>
+              div class="text-red-600">
+                <ul>
+                  <% @contact.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
-                <label for="name" class="block text-sm font-medium">Name *</label>
-                <input type="text" name="contact[name]" id="name" required class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+                <%= f.label :name, "Name *", class: "block text-sm font-medium" %>
+                <%= f.text_field :name, required: true, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
               <div class="space-y-2">
-                <label for="email" class="block text-sm font-medium">Email *</label>
-                <input type="email" name="contact[email]" id="email" required class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+                <%= f.label :email, "Email *", class: "block text-sm font-medium" %>
+                <%= f.text_field :email, required: true, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
-                <label for="date" class="block text-sm font-medium">Wedding Date</label>
-                <input type="date" name="contact[date]" id="date" required class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+                <%= f.label :date, "Wedding Date *", class: "block text-sm font-medium" %>
+                <%= f.date_field :date, required: true, class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
               <div class="space-y-2">
-                <label for="location" class="block text-sm font-medium">Location</label>
-                <input type="text" name="contact[location]" id="location" required placeholder="e.g., Dublin, Ireland" class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+                <%= f.label :location, "Location *", class: "block text-sm font-medium" %>
+                <%= f.text_field :location, required: true, placeholder: "e.g., Dublin, Ireland", class: "w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark" %>
               </div>
             </div>
             <div class="space-y-2">
-              <label for="message" class="block text-sm font-medium">Message *</label>
-              <textarea name="contact[message]"  id="message" placeholder="Tell me About your wedding plans..." required class="w-full p-3 h-40 border border-sand-dark rounded-md focus:outline-gold-dark"></textarea>
+              <%= f.label :message, "Message *", class: "block text-sm font-medium" %>
+              <%= f.text_area :message, required: true, placeholder: "Tell me About your wedding plans...", class: "w-full p-3 h-40 border border-sand-dark rounded-md focus:outline-gold-dark" %>
             </div>
             <button class="btn-gold mt-6">Send Message</button>
           <% end %>
