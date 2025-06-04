@@ -106,7 +106,7 @@ Rails.application.configure do
   # Set up email_form
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address: 'mail.privatemail.com',
+  address: 'mail.privateemail.com',
   damain: 'carterfotografia.com',
   user_name: ENV['NAMECHEAP_EMAIL_USERNAME'],
   password: ENV['NAMECHEAP_EMAIL_PASSWORD'],
