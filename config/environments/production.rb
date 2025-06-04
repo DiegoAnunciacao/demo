@@ -106,13 +106,13 @@ Rails.application.configure do
   # Set up email_form
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  user_name: ENV['SENDGRID_USERNAME'],
-  password: ENV['SENDGRID_PASSWORD'],
-  domain: 'https://demo-photo-a1c28997066c.herokuapp.com/',
-  address: 'smtp.sendgrid.net',
+  address: 'mail.privatemail.com',
+  damain: 'carterfotografia.com',
+  user_name: ENV['NAMECHEAP_EMAIL_USERNAME'],
+  password: ENV['NAMECHEAP_EMAIL_PASSWORD'],
   port: 587,
-  authentication: :plain,
+  authentication: :login,
   enable_starttls_auto: true
 }
-config.action_mailer.default_url_options = { host: 'https://demo-photo-a1c28997066c.herokuapp.com/' }
+config.action_mailer.default_url_options = { host: 'carterfotografia.com' }
 end

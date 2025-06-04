@@ -1,6 +1,6 @@
 class ContactMailer < ApplicationMailer
   default to: "carterfotografia@gmail.com"
-   default from: "carterfotografia@gmail.com"
+   default from: "contact@carterfotografia.com"
   def create_email(contact_params)
     @name = contact_params[:name]
     @reply_email = contact_params[:email]
