@@ -5,8 +5,9 @@ class ContactsController < ApplicationController
       ContactMailer.create_email(email_params).deliver_now
       redirect_to root_path, notice: "Message Successful delivered"
     else
-      flash.now[:alert] = "Please fix the errors below"
-      render "pages/contact"
+       Rails.logger.info "Contact validation errors: #{@contact.errors.full_messages.join(', ')}"
+    flash.now[:alert] = "Please fix the errors below"
+    render "pages/contact"
     end
   end
 

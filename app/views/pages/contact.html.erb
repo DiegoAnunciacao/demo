@@ -8,7 +8,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <div class="md:col-span-2">
         <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
-          <%= form_with model: @contact, url: pages_contact_path, method: :post, local: true, class: "space-y-6" do |f| %>
+          <%= form_with model: @contact, url: pages_contacts_path, method: :post, local: true, class: "space-y-6" do |f| %>
             <% if @contact.errors.any? %>
               <div class="text-red-600">
                 <ul>
