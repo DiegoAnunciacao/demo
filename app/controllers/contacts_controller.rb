@@ -6,8 +6,8 @@ class ContactsController < ApplicationController
       redirect_to root_path, notice: "Message Successful delivered"
     else
        Rails.logger.info "Contact validation errors: #{@contact.errors.full_messages.join(', ')}"
-    flash.now[:alert] = "Please fix the errors below"
-    render "pages/contact"
+      flash.now[:alert] = "Please fix the errors below"
+      render "pages/contact"
     end
   end
 
