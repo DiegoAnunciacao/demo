@@ -1,5 +1,18 @@
-<p><strong>Nome:</strong> <%= @name %></p>
-<p><strong>Email:</strong> <%= @reply_email %></p>
-<p><strong>Email:</strong> <%= @date %></p>
-<p><strong>Email:</strong> <%= @location %></p>
-<p><strong>Mensagem:</strong> <%= @message %></p>
+<div class="container">
+  <h2>📥 Nova mensagem recebida do site</h2>
+
+  <div class="info">
+    <p><span class="label">Nome:</span> <%= @name %></p>
+    <p><span class="label">E-mail:</span> <%= @reply_email %></p>
+    <p><span class="label">Date:</span> <%= @date %></p>
+    <p><span class="label">Location:</span> <%= @location %></p>
+
+  </div>
+
+  <div class="info">
+    <p><span class="label">Mensagem:</span></p>
+    <p><%= @message %></p>
+  </div>
+
+
+</div>
