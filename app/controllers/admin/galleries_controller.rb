@@ -13,7 +13,7 @@ class Admin::GalleriesController < Admin::ApplicationController
     @gallery.user = current_user
 
     if @gallery.save
-      redirect_to pages_portfolio_path, notice: "Gallery successful created"
+      redirect_to admin_gallery_path(@gallery), notice: "Gallery successful created"
     else
       render :new, status: :unprocessable_entity # importante para mostrar os erros
     end
@@ -24,7 +24,7 @@ class Admin::GalleriesController < Admin::ApplicationController
 
   def update
     if @gallery.update(galleries_params)
-      redirect_to gallery_path(@gallery), status: :see_other, notice: "Client successful updated"
+      redirect_to admin_root_path, status: :see_other, notice: "Client successful updated"
     else
       render :edit, status: :unprocessable_entity # importante para mostrar os erros
     end

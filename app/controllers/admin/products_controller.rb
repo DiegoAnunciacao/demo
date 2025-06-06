@@ -13,7 +13,7 @@ class Admin::ProductsController < Admin::ApplicationController
     @product.user = current_user
 
     if @product.save
-      redirect_to admin_root_path(@product), notice: "Product successful created"
+      redirect_to admin_product_path(@product), notice: "Product successful created"
     else
       render :new, status: :unprocessable_entity
     end
