@@ -1,10 +1,6 @@
 @theme {
   --font-playfair: "Playfair Display", "serif";
   --font-lato: "Lato", "sans-serif";
-  --breakpoint-*: initial;
-  --breakpoint-sm: 480px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 976px;
   --color-gold-light: #dbcaa3;
   --color-gold-default: #d1bb87;
   --color-gold-dark: #c4a96a;
@@ -15,4 +11,3 @@
   --foreground: hsl(27, 4%, 43%);
   --container-main: 86rem;
 }
-
