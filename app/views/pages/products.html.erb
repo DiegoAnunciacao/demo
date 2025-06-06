@@ -13,7 +13,7 @@
             <h3 class="text-xl font-medium"><%= product.title %></h3>
             <p class="text-gold-dark font-medium">From €<%= product.price.to_i %></p>
             <p class="text-foreground text-sm"><%= product.description %></p>
-            <%= link_to "Enquire Now", pages_contact_path, class: "btn-card" %>
+            <%= link_to "Enquire Now", contact_path, class: "btn-card" %>
           </div>
         </div>
       <% end %>
@@ -22,7 +22,7 @@
       <h2 class="text-center text-2xl md:text-3xl mb-6">Custom Packages</h2>
       <p class="text-foreground text-center max-w-2xl mx-auto mb-8">Every wedding is unique, and I'm happy to create a custom package tailored to your specific needs and preferences. Contact me to discuss your vision, and we can craft the perfect coverage for your special day.</p>
       <div class="text-center">
-        <%= link_to "Request Custom Package", pages_contact_path, class: "btn-gold" %>
+        <%= link_to "Request Custom Package", contact_path, class: "btn-gold" %>
       </div>
     </div>
   </div>
