@@ -8,8 +8,8 @@
         <div class="aspect-[3/4] relative group overflow-hidden rounded-lg">
 
           <% if gallery.cover_img.attached? %>
-            <%= link_to data: { fancybox: "gallery-#{gallery.id}" } do %>
-              <%= cl_image_tag(gallery.cover_img.key, quality: "auto", class: "w-full h-full object-cover") %>
+            <%= link_to url_for(gallery.cover_img), data: { fancybox: "gallery-#{gallery.id}" } do %>
+              <%= image_tag gallery.cover_img, class: "w-full h-full object-cover" %>
             <% end %>
           <% end %>
 
@@ -22,7 +22,7 @@
           </div>
 
           <% gallery.gallery_img.each do |image| %>
-            <%= cl_image_tag(image.key, quality: "auto", data: { fancybox: "gallery-#{gallery.id}" }, style: "display:none;" ) %>
+            <%= image_tag url_for(image), data: { fancybox: "gallery-#{gallery.id}" }, style: "display:none;" %>
           <% end %>
         </div>
       <% end %>
