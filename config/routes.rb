@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get "pages/about", as: "about"
-  get "pages/portfolio", as: "portfolio"
-  get "pages/products", as: "products"
-  get "pages/contact", to: "pages#contact", as: "contact"
-  post "pages/contact", to: "contacts#create"
+  get "about", to: "pages#about", as: "about"
+  get "portfolio", to: "pages#portfolio", as: "portfolio"
+  get "products", to: "pages#products", as: "products"
+  get "contact", to: "pages#contact", as: "contact"
+  post "contact", to: "contacts#create"
   devise_for :users, skip: [ :registrations ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
