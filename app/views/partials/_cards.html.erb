@@ -6,7 +6,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <% @covers.each do |cover| %>
         <div class="aspect-[3/4] overflow-hidden rounded-md fade-in">
-          <%= image_tag asset_path(cover[:image]), class: "rounded-lg w-full h-full object-cover hover:scale-105 transition-transform duration-700" %>
+          <%= image_tag cover[:image], class: "rounded-lg w-full h-full object-cover hover:scale-105 transition-transform duration-700" %>
         </div>
       <% end %>
     </div>
