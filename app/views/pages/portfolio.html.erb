@@ -8,7 +8,7 @@
         <div class="aspect-[3/4] relative group overflow-hidden rounded-lg">
 
           <% if gallery.cover_img.attached? %>
-            <%= link_to cl_image_tag(gallery.cover_img.key), data: { fancybox: "gallery-#{gallery.id}" } do %>
+            <%= link_to gallery.cover_img.url, data: { fancybox: "gallery-#{gallery.id}" } do %>
               <%= cl_image_tag(gallery.cover_img.key, quality: "auto", class: "w-full h-full object-cover") %>
             <% end %>
           <% end %>
