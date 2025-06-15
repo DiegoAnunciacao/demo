@@ -7,5 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts("Seeding User ==================")
+user = User.find_or_create_by!(email: "carter@gmail.com") do |u|
+  u.password = "test123"
+  u.is_admin = true
+end
 
-Portfolio.create! if Portfolio.count == 0
+puts("Seeding Portfolio =============")
+Portfolio.find_or_create_by!(user: user)
