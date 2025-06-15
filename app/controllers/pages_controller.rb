@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
   def portfolio
-    @galleries = Gallery.all
+    @portfolio = Portfolio.first
   end
 
   def products

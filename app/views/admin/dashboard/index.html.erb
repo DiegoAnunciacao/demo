@@ -2,20 +2,10 @@
   <div class="grid grid-cols-2 mt-16">
     <div class="px-6">
       <div class="flex justify-between items-center mb-6 ">
-        <h1 class="text-3xl">Galleries</h1>
+        <h1 class="text-3xl">Portfolio</h1>
         <div>
-          <%= link_to "New Gallery",  new_admin_gallery_path, class: "btn-primary" %>
+          <%= link_to "Add Photos",  edit_admin_portfolio_path, class: "btn-primary" %>
         </div>
-      </div>
-
-      <div class="space-y-4">
-        <% @galleries.each do |gallery| %>
-          <div class="flex items-center">
-            <p class="mr-6"><%= gallery.title %></p>
-            <%= link_to "Edit", edit_admin_gallery_path(gallery), class: "btn-primary mr-6" %>
-            <%= link_to "Delete", admin_gallery_path(gallery), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-danger" %>
-          </div>
-        <% end %>
       </div>
     </div>
 

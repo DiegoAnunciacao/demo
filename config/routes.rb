@@ -18,11 +18,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   resources :products, only: [ :show ]
-  resources :galleries, only: [ :show ]
 
   namespace :admin do
     root "dashboard#index"
-    resources :galleries, except: [ :show, :index ]
+    delete "portfolio/photo/:id", to: "portfolios#destroy_photo", as: :destroy_portfolio_photo
+    resource :portfolio, except: [ :index, :new, :create, :destroy ]
     resources :products, except: [ :show, :index ]
   end
 end
