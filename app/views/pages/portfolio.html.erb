@@ -7,7 +7,7 @@
       <% @portfolio.photos.each do |photo| %>
         <div class="aspect-[3/4] relative group overflow-hidden rounded-lg">
           <%= link_to url_for(photo), data: { fancybox: "photo" } do %>
-            <%= cl_image_tag photo, quality: "auto", class: "w-full h-full object-cover" %>
+            <%= cl_image_tag photo.key, quality: "auto", class: "w-full h-full object-cover" %>
           <% end %>
         </div>
       <% end %>
