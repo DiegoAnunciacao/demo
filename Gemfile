@@ -70,4 +70,4 @@ group :production do
   gem 'pg'
 end
 
-gem "cloudinary", "~> 2.3"
+gem "cloudinary", "~> 2.4"
